@@ -1,0 +1,29 @@
+infoPlant	ENI_Gela(CL)
+infoModul	#2@+90_EST
+panelType	ENInewMod.txt
+moduleLengthUP(mm)	11610
+moduleLengthDW(mm)	11610
+distance(mm)	12294.3
+baseName	_DSC
+imgType	.JPG
+gLup	160
+gLdw	100
+frameMIN	4431
+frameMAX	4897
+m(deg/sec)	0.048979
+q(deg)	-1856.88
+vertex2jp	-125
+JPright	0	6550	385
+JPleft	0	-5890	0
+scan	full
+fullLength	yes
+useOldPoints	no
+x0here	yes
+NimgRef	/run/media/marco/d2quadra/VISfieldR/ENI/NuovoModulo_2024/attuato16ott24/_DSC4663.JPG
+px[0]	1737.78	-72.4735
+px[1]	-1525.22	-51.4735
+px[2]	1410.78	1057.53
+px[3]	1395.78	-1196.47
+px[4]	-1790.22	-806.473
+px[5]	-1785.22	705.527
+chi2	224.608

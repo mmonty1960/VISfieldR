@@ -1,0 +1,17 @@
+manufacturer= ENI
+type= P/6
+focal= 1710.0
+width= 11900.0
+innerXmin= 20.3
+innerXmax= 1069.1
+outerXmin= 2037.9
+outerXmax= 2886.9
+middleXmin= 1069.4
+middleXmax= 2037.7
+P_hanging:
+21.0 5950.0 
+1068.0 5950.0  
+1070.0 5950.0 
+2037.0 5950.0  
+2038.0 5950.0  
+2886.0 5950.0 
