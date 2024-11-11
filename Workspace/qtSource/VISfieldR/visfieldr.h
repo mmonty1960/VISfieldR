@@ -56,7 +56,7 @@ private:
     std::string winname;
     friend void on_mouse(int ev, int x, int y, int, void* obj);
 
-public slots:
+public Q_SLOTS:
     void crop();
     void cropIF();
     void cropDevSlope();

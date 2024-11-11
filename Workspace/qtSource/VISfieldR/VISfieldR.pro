@@ -19,10 +19,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+win32 {
+	QT += printsupport
+        include( .\QWT_win.pri )
+        CONFIG+= c++11 gui console
+        LIBS += -L"C:/opencv-build/install/x64/mingw/bin" -lopencv_core490 -lopencv_highgui490 -lopencv_imgcodecs490 -lopencv_imgproc490
+        LIBS += -L"C:/Program Files/Tools/mingw810_64/cminpack-1.3.8/build" -lcminpack
+        INCLUDEPATH += C:\opencv-build\install\include\opencv2
+        INCLUDEPATH += C:\opencv-build\install\include
+        target.path=.\
+	INSTALLS += target
+}
+
+unix {
+    CONFIG += link_pkgconfig
+	PKGCONFIG += opencv4 cminpack cblas
+}
+
 # Input
 HEADERS += visfieldr.h
 FORMS += visfieldr.ui
 SOURCES += main.cpp visfieldr.cpp
 
-CONFIG += link_pkgconfig
-PKGCONFIG += opencv4 cminpack cblas
+
