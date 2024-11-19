@@ -53,7 +53,7 @@ using namespace std;
 using namespace cv;
 
 //global variables *******************************
-QString pathbase="/run/media/marco/d2quadra/VISfieldR/";//"/home/marco/Workspace/VISfieldR/";
+QString pathbase;//="/run/media/marco/d2quadra/VISfieldR/";//"/home/marco/Workspace/VISfieldR/";
 QString fileInfo="";
 QString fileResult=pathbase+"results.txt";
 QString pathfile;
@@ -244,6 +244,26 @@ VISfieldR::VISfieldR(QWidget *parent){
     enableDisable();
     pB_crop_IF -> setEnabled(false);
     pB_crop_devSlope -> setEnabled(false);
+
+    // parameter initialization
+#ifdef __unix__
+#define IS_POSIX 1
+#else
+#define IS_POSIX 0
+#endif
+    QDir dir2;  //current directory
+    dir2.cdUp();//cd ..
+    dir2.cdUp();//cd ..
+    if (IS_POSIX == 1) {
+        //Linux path initialization
+        //nothing to do
+    }
+    else {
+        //windows path inizialization
+        dir2.cdUp();//cd ..
+    }
+    pathbase=dir2.absolutePath()+"/VISfieldR/";
+    printf("dir= %s\n",pathbase.toStdString().c_str());
 }
 
 VISfieldR::~VISfieldR()
