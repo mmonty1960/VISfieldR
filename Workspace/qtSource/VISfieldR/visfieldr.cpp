@@ -915,7 +915,14 @@ double VISfieldR::JPGtime(QString imgName){
     double valTime;
     QString command,Vline;
     //read date and time of JPG image and write the values in info.txt
-    command="exiftool -s3 -DateTimeOriginal -SubSecTime "+imgName+" > "+pathbase+"info.txt";
+    if (IS_POSIX == 1) {
+        //Linux command
+        command="exiftool -s3 -DateTimeOriginal -SubSecTime "+imgName+" > "+pathbase+"info.txt";
+    }
+    else {
+        //windows command
+        command=pathbase+"exiftool.exe -s3 -DateTimeOriginal -SubSecTime "+imgName+" > "+pathbase+"info.txt";
+    }
     system(command.toStdString().c_str());
     fflush(stdout);
     waitKey(10);
